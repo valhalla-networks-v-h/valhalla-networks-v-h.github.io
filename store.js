@@ -8,9 +8,11 @@
 
   // Shown while no Tebex token is configured; mirrors the packages created in the Tebex panel.
   var FALLBACK = [
-    {name: "VIP - 30 days", price: "4.99", perks: ["Premium vehicles at the car dealer", "+25 % pay every paycheck", "VIP tag in OOC chat", "Discord VIP role"]},
+    {name: "VIP - 30 days", price: "4.99", perks: ["Premium vehicles at the car dealer", "+2 character slots", "Physgun, toolgun and props (PET)", "+25 % pay every paycheck", "VIP tag in OOC chat and Discord role"]},
     {name: "VIP - 90 days", price: "12.99", perks: ["Everything in VIP", "Save 13 % against monthly", "Stacks with running VIP time"]},
     {name: "Premium vehicles", price: "9.99", perks: ["Permanent access to premium vehicles", "Lassiter Hollywood, Mercedes G4 W31", "Every future premium car included"]},
+    {name: "+1 Character slot", price: "3.99", perks: ["One more character, permanently", "Stacks - buy as many as you like"]},
+    {name: "PET flags", price: "5.99", perks: ["Physgun, toolgun and props", "Permanent, on every character", "Abuse (prop climbing, blocking) removes them"]},
     {name: "Supporter", price: "2.99", perks: ["Supporter tag in OOC chat", "Discord supporter role", "Our thanks - it keeps the server online"]}
   ];
 
