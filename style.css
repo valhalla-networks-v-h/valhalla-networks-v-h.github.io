@@ -1,8 +1,8 @@
 /* Valhalla Networks - community board look (dark MyBB style, lavender accent). */
 :root {
-  --night: #0b0916; --page: #141221; --box: #1c1a2c; --row: #211f33; --row-alt: #252338;
-  --line: #2f2b47; --accent: #8b4ce8; --accent-hi: #b995f5; --accent-dk: #5a2fae;
-  --text: #e9e5f5; --muted: #a39cbf; --faint: #6f6890; --gold: #e8be50;
+  --night: #1b1b1d; --page: #1b1b1d; --box: #262628; --row: #2a2a2c; --row-alt: #262628;
+  --line: #333336; --accent: #7b3fd4; --accent-hi: #b78cf7; --accent-dk: #5d2ca8;
+  --text: #ececf1; --muted: #a8a6b3; --faint: #77757f; --gold: #e8be50; --head: #0d0517;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: var(--night); }
@@ -14,54 +14,38 @@ a { color: var(--accent-hi); text-decoration: none; }
 a:hover { color: #fff; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-hi); outline-offset: 2px; }
 
-/* Header: night sky with drifting stars and the winged wordmark. */
-.sky {
-  position: relative; overflow: hidden; text-align: center; padding: 46px 16px 30px;
-  background: radial-gradient(ellipse at 50% 120%, #3a2170 0%, #1a1036 45%, #0b0916 85%);
-}
-.sky::before, .sky::after {
-  content: ""; position: absolute; inset: -50%; pointer-events: none;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, #fff8, transparent), radial-gradient(1px 1px at 30% 70%, #fff6, transparent),
-    radial-gradient(1.5px 1.5px at 55% 35%, #fff9, transparent), radial-gradient(1px 1px at 75% 15%, #fff5, transparent),
-    radial-gradient(1px 1px at 85% 60%, #fff7, transparent), radial-gradient(1.5px 1.5px at 20% 85%, #fff6, transparent),
-    radial-gradient(1px 1px at 65% 85%, #fff5, transparent), radial-gradient(1px 1px at 45% 10%, #fff8, transparent);
-  background-size: 340px 340px; animation: drift 120s linear infinite;
-}
-.sky::after { background-size: 520px 520px; opacity: .6; animation-duration: 200s; }
-@keyframes drift { to { transform: translate(170px, 85px); } }
-@media (prefers-reduced-motion: reduce) { .sky::before, .sky::after { animation: none; } }
-.sky img { position: relative; width: min(620px, 92%); height: auto; filter: drop-shadow(0 8px 30px rgba(139,76,232,.5)); }
-
-nav.main { background: linear-gradient(#1d1931, #161327); border-top: 1px solid var(--line); border-bottom: 3px solid var(--accent); }
-nav.main ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; max-width: 1180px; margin: 0 auto; }
-nav.main a { display: block; padding: 14px 20px; font-weight: 700; font-size: 16px; color: var(--text); letter-spacing: .02em; }
-nav.main a:hover, nav.main a[aria-current="page"] { background: var(--accent-dk); color: #fff; }
-
+/* Header: deep night with a drifting star field (canvas) behind the winged wordmark and the menu. */
+.sky { position: relative; overflow: hidden; text-align: center; background: var(--head); border-bottom: 2px solid var(--accent); }
+.sky canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.sky .logo { position: relative; display: inline-block; padding: 28px 16px 6px; }
+.sky .logo img { width: min(520px, 90vw); height: auto; display: block; }
+nav.main { position: relative; }
+nav.main ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; padding: 8px 16px 18px; }
+nav.main a { display: block; padding: 6px 14px; font-size: 17px; font-weight: 600; color: #fff; border-radius: 3px; }
+nav.main a:hover, nav.main a[aria-current="page"] { background: rgba(123, 63, 212, .55); color: #fff; }
 .wrap { max-width: 1180px; margin: 26px auto 60px; padding: 0 16px; display: grid; grid-template-columns: 1fr 300px; gap: 18px; align-items: start; }
 .wrap.single { grid-template-columns: 1fr; }
 @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
 
 /* Board box with a purple header bar, like the forum tables. */
-.box { background: var(--box); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; margin-bottom: 18px; }
+.box { background: var(--box); border: 0; border-radius: 2px; overflow: hidden; margin-bottom: 18px; }
 .box > h2 {
-  font-size: 18px; font-weight: 700; padding: 10px 16px; color: #fff;
-  background: linear-gradient(180deg, #9a5df2 0%, #7a40e0 55%, #6a35d0 100%);
+  font-size: 18px; font-weight: 700; padding: 13px 16px; color: #fff; background: var(--accent);
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
 }
 .box > h2 small { font-weight: 500; font-size: 13px; opacity: .85; }
-.box > h3 { font-size: 13px; font-weight: 700; padding: 6px 16px; background: #26203f; color: var(--muted); border-bottom: 1px solid var(--line); }
+.box > h3 { font-size: 13px; font-weight: 700; padding: 7px 16px; background: var(--accent-dk); color: #fff; }
 .box .pad { padding: 16px; }
 
 .forum { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--row); }
 .forum:nth-child(even) { background: var(--row-alt); }
 .forum:last-child { border-bottom: 0; }
-.forum .icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #2c2547; color: var(--accent-hi); }
+.forum .icon { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: #1d1d1f; color: #d9d6e6; box-shadow: inset 0 0 0 2px #313134; }
 .forum .icon svg { width: 24px; height: 24px; }
 .forum .icon img { width: 48px; height: 48px; border-radius: 50%; }
 .forum b { display: block; font-size: 17px; color: var(--accent-hi); }
 .forum p { color: var(--muted); font-size: 14px; }
-.forum .go { font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 3px; background: #2c2547; color: var(--text); white-space: nowrap; }
+.forum .go { font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 3px; background: #1d1d1f; color: var(--text); white-space: nowrap; }
 .forum .go:hover { background: var(--accent); }
 @media (max-width: 560px) { .forum { grid-template-columns: 48px 1fr; } .forum .go { grid-column: 2; justify-self: start; } }
 
@@ -82,7 +66,7 @@ nav.main a:hover, nav.main a[aria-current="page"] { background: var(--accent-dk)
   clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); border: 0; cursor: pointer; font: inherit; font-weight: 700;
 }
 .btn:hover { background: #a06cf0; color: #fff; }
-.btn.ghost { background: #2c2547; }
+.btn.ghost { background: #1d1d1f; }
 .btn.block { display: block; text-align: center; margin-top: 8px; }
 .side-list { list-style: none; }
 .side-list li { display: flex; gap: 10px; align-items: center; padding: 8px 16px; border-bottom: 1px solid var(--line); }
