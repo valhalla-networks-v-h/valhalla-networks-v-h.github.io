@@ -91,3 +91,15 @@ nav.main a:hover, nav.main a[aria-current="page"] { background: rgba(123, 63, 21
 .faction p { color: var(--muted); font-size: 14px; margin: 4px 0 12px; }
 
 footer { text-align: center; color: var(--faint); font-size: 13px; padding: 26px 16px 40px; border-top: 1px solid var(--line); }
+.byline { margin-top: 10px; font-size: 14px; color: var(--muted); } .byline b { color: var(--accent-hi); }
+
+/* Store */
+.packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 16px; }
+.pkg { background: var(--row); border-top: 3px solid var(--accent); padding: 16px; display: flex; flex-direction: column; }
+.pkg h4 { font-size: 19px; color: #fff; }
+.pkg .price { font-size: 30px; font-weight: 700; color: var(--accent-hi); margin: 4px 0 10px; }
+.pkg ul { list-style: none; color: var(--muted); font-size: 14px; flex: 1; margin-bottom: 12px; }
+.pkg li { padding: 3px 0 3px 18px; position: relative; }
+.pkg li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 8px; height: 2px; background: var(--accent); }
+.pkg .desc { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.btn:disabled { background: #3a3a3e; color: var(--faint); cursor: not-allowed; }
