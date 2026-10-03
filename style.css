@@ -5,6 +5,11 @@
   --text: #ececf1; --muted: #a8a6b3; --faint: #77757f; --gold: #e8be50; --head: #0d0517;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+.store-options { margin: auto; padding: 24px; width: min(520px, 94vw); color: var(--text); background: var(--box); border: 2px solid var(--accent); }
+.store-options::backdrop { background: #000b; }
+.store-options label { display: block; margin: 18px 0; }
+.store-options select, .store-options input { display: block; width: 100%; margin-top: 8px; padding: 10px; color: var(--text); background: var(--night); border: 1px solid var(--accent-hi); }
+.store-options button { margin-right: 12px; }
 html { background: var(--night); }
 body {
   font: 15px/1.55 "Rajdhani", "Segoe UI", system-ui, sans-serif; color: var(--text);

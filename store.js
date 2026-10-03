@@ -56,12 +56,49 @@
       .then(function (r) { if (!r.ok) throw new Error("Tebex " + r.status); return r.json(); });
   }
 
-  function buy(pkg) {
+  function configure(pkg) {
+    notice.textContent = "Loading package options...";
+    api("GET", "/accounts/" + cfg.token + "/packages/" + pkg.id)
+      .then(function (res) {
+        var variables = res.data.variables || [];
+        if (!variables.length) { buy(pkg, {}); return; }
+        var dialog = el("dialog", "store-options");
+        var form = el("form");
+        var values = {};
+        form.appendChild(el("h3", null, pkg.name));
+        variables.forEach(function (v) {
+          var label = el("label", null, v.description || v.identifier);
+          var input = el(v.type === "dropdown" ? "select" : "input");
+          input.name = v.identifier;
+          input.required = true;
+          if (v.type === "dropdown") {
+            var blank = el("option", null, "Choose an option"); blank.value = ""; input.appendChild(blank);
+            (v.options || []).forEach(function (o) { var option = el("option", null, o.name); option.value = o.id; input.appendChild(option); });
+          } else { input.type = "text"; if (v.max_length) input.maxLength = v.max_length; }
+          label.appendChild(input); form.appendChild(label);
+          values[v.identifier] = input;
+        });
+        var proceed = el("button", "btn", "Continue to checkout"); proceed.type = "submit";
+        var cancel = el("button", "btn ghost", "Cancel"); cancel.type = "button";
+        cancel.addEventListener("click", function () { dialog.close(); });
+        form.appendChild(proceed); form.appendChild(cancel);
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          var data = {}; Object.keys(values).forEach(function (key) { data[key] = values[key].value; });
+          dialog.close(); buy(pkg, data);
+        });
+        dialog.addEventListener("close", function () { dialog.remove(); });
+        dialog.appendChild(form); document.body.appendChild(dialog); dialog.showModal();
+        notice.textContent = "Choose the agreed package option. Tebex confirms the final price before payment.";
+      }).catch(function () { notice.textContent = "Could not load package options. Please try again."; });
+  }
+
+  function buy(pkg, variableData) {
     notice.textContent = "Preparing your basket...";
     api("POST", "/accounts/" + cfg.token + "/baskets", {complete_url: here + "?done=1", cancel_url: here, complete_auto_redirect: true})
       .then(function (res) {
         var ident = res.data.ident;
-        localStorage.setItem("vBasket", JSON.stringify({ident: ident, pkg: pkg ? pkg.id : null}));
+        localStorage.setItem("vBasket", JSON.stringify({ident: ident, pkg: pkg ? pkg.id : null, variables: variableData || {}}));
         return api("GET", "/accounts/" + cfg.token + "/baskets/" + ident + "/auth?returnUrl=" + encodeURIComponent(here + "?basket=" + ident));
       })
       .then(function (links) {
@@ -87,7 +124,7 @@
         history.replaceState(null, "", here);
         if (!saved.pkg) return null;
         notice.textContent = "Signed in through Steam. Opening checkout...";
-        return api("POST", "/baskets/" + ident + "/packages", {package_id: saved.pkg, quantity: 1});
+        return api("POST", "/baskets/" + ident + "/packages", {package_id: saved.pkg, quantity: 1, variable_data: saved.variables || {}});
       })
       .then(function (res) { if (res) { localStorage.removeItem("vBasket"); location.href = res.data.links.checkout; } })
       .catch(function (e) { notice.textContent = "Could not add the package (" + e.message + ")."; });
@@ -104,13 +141,16 @@
   }
 
   if (params.get("basket")) resume(params.get("basket"));
+  else {
+    try { var prior = JSON.parse(localStorage.getItem("vBasket") || "{}"); if (prior.ident && !prior.pkg) resume(prior.ident); } catch (e) {}
+  }
   api("GET", "/accounts/" + cfg.token + "/categories?includePackages=1")
     .then(function (res) {
       (res.data || []).forEach(function (cat) {
         if (!(cat.packages || []).length) return;
         heading(cat.name);
         (cat.packages || []).forEach(function (p) {
-          grid.appendChild(card({id: p.id, name: p.name, price: Number(p.total_price ?? p.base_price).toFixed(2), description: p.description}, buy));
+          grid.appendChild(card({id: p.id, name: p.name, price: Number(p.total_price ?? p.base_price).toFixed(2), from: p.name === "Custom Character", description: p.description}, configure));
         });
       });
     })
