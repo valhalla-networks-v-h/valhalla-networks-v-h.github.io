@@ -31,6 +31,7 @@
 
   function card(pkg, onBuy) {
     var c = el("article", "pkg");
+    if (pkg.name === "Founder Medal") { c.id="founder-package"; var medal=el("img"); medal.src="img/founder-medal.png"; medal.alt="Actual in-game Founder Medal"; medal.width=105; medal.height=154; c.appendChild(medal); }
     c.appendChild(el("h4", null, pkg.name));
     c.appendChild(el("div", "price", (pkg.from ? "from " : "") + (SYMBOL[cfg.currency] || "") + pkg.price + (SYMBOL[cfg.currency] ? "" : " " + (cfg.currency || ""))));
     var ul = el("ul");
@@ -146,10 +147,10 @@
   }
   api("GET", "/accounts/" + cfg.token + "/categories?includePackages=1")
     .then(function (res) {
-      (res.data || []).forEach(function (cat) {
+      (res.data || []).sort(function(a,b){return (b.name === "Specials") - (a.name === "Specials");}).forEach(function (cat) {
         if (!(cat.packages || []).length) return;
         heading(cat.name);
-        (cat.packages || []).forEach(function (p) {
+        (cat.packages || []).sort(function(a,b){return (b.name === "Founder Medal") - (a.name === "Founder Medal");}).forEach(function (p) {
           grid.appendChild(card({id: p.id, name: p.name, price: Number(p.total_price ?? p.base_price).toFixed(2), from: p.name === "Custom Character", description: p.description}, configure));
         });
       });

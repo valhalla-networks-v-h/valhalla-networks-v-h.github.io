@@ -108,3 +108,5 @@ footer { text-align: center; color: var(--faint); font-size: 13px; padding: 26px
 .pkg li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 8px; height: 2px; background: var(--accent); }
 .pkg .desc { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
 .btn:disabled { background: #3a3a3e; color: var(--faint); cursor: not-allowed; }
+
+.founder-layout{display:flex;align-items:center;gap:32px}.founder-layout>img{object-fit:contain;flex:none;filter:drop-shadow(0 8px 20px #0009)}.founder-feature{border-color:#b08b45}.guide-image{width:100%;height:auto;border-radius:10px;margin:0 0 20px}.pad li{margin-bottom:10px}@media(max-width:600px){.founder-layout{flex-direction:column;text-align:center}}
