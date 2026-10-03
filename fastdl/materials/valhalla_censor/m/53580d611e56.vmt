@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/orpo/orpo_fepo_shared_misc_col"
+
+	"$detail" "valhalla_censor/p/6b520f065498"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 8 rotate 0 translate -0 -1.640625"
+}

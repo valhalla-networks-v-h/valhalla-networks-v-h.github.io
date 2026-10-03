@@ -1,0 +1,14 @@
+VertexLitGeneric
+{
+	$basetexture "models/matti/pm0_v3/german_default/waffenfarbe_orpo/feldgendarmerie_patch_col"
+	$bumpmap "models/matti/pm0_v3/german_default/waffenfarbe_orpo/feldgendarmerie_patch_nml"
+
+	$color2 "{ 65 141 77 }"
+	$blendtintbybasealpha 1
+
+	"$detail" "valhalla_censor/p/059603f634b9"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 4 4 rotate 0 translate -1.453125 -2.296875"
+}

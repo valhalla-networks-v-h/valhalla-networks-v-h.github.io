@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "valhalla/uniform/ss_armband_cross_col"
+	"$basetexturetransform" "center 0 0 scale 1 4 rotate 0 translate 0 0"
+	"$phong" 1
+	"$phongfresnelranges" "[0.5 0.75 1]"
+	"$phongexponent" 5
+	"$phongboost" 0.6
+}

@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+"$baseTexture" "models\minus\medals_col"
+"$bumpmap" "models\minus\medals_nml"
+$phong 1
+$phongexponenttexture	"models\minus\albedo_tintdefine"
+$phongalbedotint 1
+$phongexponent 5
+$phongboost	20
+$phongwarptexture "models\minus\phongwarp_sheen" 
+$phongfresnelranges	"[0.5 1.5 8.0]"
+$allowdiffusemodulation 0
+
+	"$detail" "valhalla_censor/p/9bb71ed4e2f8"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 2 2 rotate 0 translate -0.5234375 -0.1484375"
+}

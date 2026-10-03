@@ -1,0 +1,20 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/comradebear/pm0_v3/enemyfront/waffen_officer_body_army_white_diff"
+	$bumpmap "models/comradebear/pm0_v3/enemyfront/heer_officer_body_army_ddn"
+
+	$envmap "env_cubemap"
+	$normalmapalphaenvmapmask 1
+	$envmaptint "[0.46 0.46 0.46]"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 7
+	$phongboost 1.86
+
+	"$detail" "valhalla_censor/p/321630cd7187"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 8 2 rotate 0 translate -5.75390625 -0.79296875"
+}

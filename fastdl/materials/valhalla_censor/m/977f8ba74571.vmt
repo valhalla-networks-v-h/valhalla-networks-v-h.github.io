@@ -1,0 +1,11 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/matti/pm0_v3/codww2/nsdap_stuff/leitung_stuff/reichs_collar_tabs_col"
+	"$bumpmap"  "models/matti/pm0_v3/codww2/nsdap_stuff/leitung_stuff/reichs_collar_tabs_nml"
+
+	"$detail" "valhalla_censor/p/585abc7cb586"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 1 rotate 0 translate -0 -0"
+}

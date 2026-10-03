@@ -110,3 +110,28 @@ footer { text-align: center; color: var(--faint); font-size: 13px; padding: 26px
 .btn:disabled { background: #3a3a3e; color: var(--faint); cursor: not-allowed; }
 
 .founder-layout{display:flex;align-items:center;gap:32px}.founder-layout>img{object-fit:contain;flex:none;filter:drop-shadow(0 8px 20px #0009)}.founder-feature{border-color:#b08b45}.guide-image{width:100%;height:auto;border-radius:10px;margin:0 0 20px}.pad li{margin-bottom:10px}@media(max-width:600px){.founder-layout{flex-direction:column;text-align:center}}
+
+/* Command guide: the command on the left (gold), what it does on the right; one column on phones. */
+.jump { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+.jump a { font-size: 14px; font-weight: 600; padding: 5px 11px; border-radius: 3px; background: #1d1d1f; color: var(--text); }
+.jump a:hover { color: var(--accent-hi); }
+.cmd { display: grid; grid-template-columns: minmax(170px, 34%) 1fr; gap: 14px; padding: 11px 16px; border-bottom: 1px solid var(--line); background: var(--row); }
+.cmd:nth-child(even) { background: var(--row-alt); }
+.cmd code { font: 700 15px/1.45 "Rajdhani", "Segoe UI", system-ui, sans-serif; color: var(--gold); overflow-wrap: anywhere; }
+.cmd p { color: var(--muted); font-size: 14px; }
+.box .intro { padding: 12px 16px; color: var(--muted); font-size: 14px; border-bottom: 1px solid var(--line); }
+@media (max-width: 600px) { .cmd { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Guides (Gameplay, Resistance): prose, bullet lists, numbered steps and small tables inside a box. */
+.guide p { color: var(--muted); margin-bottom: 10px; max-width: 78ch; }
+.guide p:last-child { margin-bottom: 0; }
+.guide ul, .guide ol { margin: 0 0 12px 22px; color: var(--muted); max-width: 78ch; }
+.guide li { margin-bottom: 7px; padding-left: 4px; }
+.guide b { color: var(--text); }
+.guide ol li::marker { color: var(--accent-hi); font-weight: 700; }
+.guide .tablewrap { overflow-x: auto; margin: 4px 0 12px; }
+.guide table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.guide th { text-align: left; color: #fff; font-weight: 700; padding: 7px 10px; background: var(--accent-dk); white-space: nowrap; }
+.guide td { padding: 7px 10px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; }
+.guide tbody tr:nth-child(even) td { background: var(--row); }
+.guide td:first-child { color: var(--text); font-weight: 600; }

@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "valhalla_censor/t/df8ca98cebc7"
+	"$bumpmap"  "valhalla_censor/t/ff8541aada1b"
+
+	$phong 1
+	$phongexponent 5
+	$phongboost 3.21
+}

@@ -1,0 +1,16 @@
+VertexLitGeneric
+{
+	$basetexture "models/nsdap/sa_schirmmutze_kepi"
+	$bumpmap "models/nsdap/nsdap_schirmmutze_nml"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 10
+	$phongboost 0.01
+
+	"$detail" "valhalla_censor/p/c19a192fcb68"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 4 rotate 0 translate -0 -0"
+}

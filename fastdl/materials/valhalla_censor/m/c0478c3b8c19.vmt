@@ -1,0 +1,18 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/brot/prometheus/gspcoatoutfit/gspsuitdb_col"
+	$bumpmap "models/brot/prometheus/gspcoatoutfit/gspsuitdb_nml"
+
+
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 5
+	$phongboost 0.001
+
+	"$detail" "valhalla_censor/p/3c7e58ff9138"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 32 32 rotate 0 translate -25.015625 -5.59375"
+}

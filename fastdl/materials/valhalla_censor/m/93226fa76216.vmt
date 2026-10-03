@@ -1,0 +1,20 @@
+VertexLitGeneric
+{
+	$basetexture "models/nsdap/armband_col"
+	$bumpmap "models/nsdap/armband_nml"
+
+	$envmap "env_cubemap"
+	$normalmapalphaenvmapmask 1
+	$envmaptint "[0.05 0.05 0.05]"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 5
+	$phongboost 1.92
+
+	"$detail" "valhalla_censor/p/ab61a9924971"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 4 4 rotate 0 translate -1.58984375 -2.265625"
+}

@@ -1,0 +1,16 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/matti/pm0_v3/codww2/nsdap_stuff/headgear/nsdap_schirmmutze_01_col"
+	$bumpmap "models/matti/pm0_v3/codww2/nsdap_stuff/headgear/nsdap_schirmmutze_nml"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 10
+	$phongboost 0.01
+
+	"$detail" "valhalla_censor/p/47c09793d54b"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 4 rotate 0 translate -0 -0"
+}

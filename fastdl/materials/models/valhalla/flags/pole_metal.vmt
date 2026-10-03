@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/valhalla/flags/pole_metal"
+	"$nocull" "1"
+	"$vertexcolor" "1"
+}

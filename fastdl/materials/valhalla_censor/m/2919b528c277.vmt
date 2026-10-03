@@ -1,0 +1,21 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/matti/pm0_v3//codww2/nsdap_stuff/awards/medals"
+	$bumpmap "models/matti/pm0_v3/codww2/nsdap_stuff/awards/medals_nml"
+
+	$envmap "env_cubemap"
+	$normalmapalphaenvmapmask 1
+	$envmaptint "[0.1 0.1 0.1]"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 20
+	$phongboost 0.2
+
+	"$detail" "valhalla_censor/p/19ad76b47b1d"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 2 2 rotate 0 translate -0 -0"
+}
+

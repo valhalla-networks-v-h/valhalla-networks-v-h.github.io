@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "valhalla_censor/t/82e23510fd16"
+	"$bumpmap"  "models\sujelo\base/km_hat_junior_base_nml"
+
+	$phong 1
+	$phongexponent 5
+	$phongboost 3.21
+}

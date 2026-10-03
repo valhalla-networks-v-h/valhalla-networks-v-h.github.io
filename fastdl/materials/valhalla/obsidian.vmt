@@ -1,0 +1,11 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "valhalla/obsidian"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[0.42 0.34 0.62]"
+	"$envmapcontrast" "1"
+	"$envmapfresnel" "1"
+	"$selfillum" "1"
+	"$selfillumtint" "[1.4 1.2 2.0]"
+	"$surfaceprop" "glass"
+}

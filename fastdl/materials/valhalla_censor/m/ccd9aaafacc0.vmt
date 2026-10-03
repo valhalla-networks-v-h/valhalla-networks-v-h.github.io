@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/ss/sddiamonds"
+
+	"$detail" "valhalla_censor/p/23c8093ebbaf"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 2 2 rotate 0 translate -0.083984375 -0.28125"
+}

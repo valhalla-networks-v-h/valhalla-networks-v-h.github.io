@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+"$baseTexture" "models\nsdap\hilter_medals_col"
+
+	"$detail" "valhalla_censor/p/0bee2c2eae0e"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 2 rotate 0 translate -0 -0.23046875"
+}

@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/valhalla/flags/party_ironcross"
+	"$nocull" "1"
+	"$vertexcolor" "1"
+}

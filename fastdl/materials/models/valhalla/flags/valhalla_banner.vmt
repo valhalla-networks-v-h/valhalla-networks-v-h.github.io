@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/valhalla/flags/valhalla_banner"
+	"$nocull" "1"
+	"$alphatest" "1"
+	"$vertexcolor" "1"
+}

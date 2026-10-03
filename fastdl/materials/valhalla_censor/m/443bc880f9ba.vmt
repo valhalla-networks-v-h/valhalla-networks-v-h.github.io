@@ -1,0 +1,20 @@
+VertexLitGeneric
+{
+	$basetexture "models/delos/shared/universal/shared_misc_stuff_col"
+	$bumpmap "models/delos/shared/universal/shared_misc_stuff_nml"
+
+	$envmap "env_cubemap"
+	$normalmapalphaenvmapmask 1
+	$envmaptint "[0.25 0.25 0.25]"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 15
+	$phongboost 5.2
+
+	"$detail" "valhalla_censor/p/c00036a11163"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 1 rotate 0 translate -0 -0"
+}

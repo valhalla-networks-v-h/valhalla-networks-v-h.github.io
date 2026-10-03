@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/matti/pm0_v3/codww2/orpo_stuff/orpo_gen_shared_misc_col"
+
+	"$detail" "valhalla_censor/p/f63e595572be"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 8 rotate 0 translate -0 -1.640625"
+}

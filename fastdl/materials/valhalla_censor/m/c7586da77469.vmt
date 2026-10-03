@@ -1,0 +1,22 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/delos/shared/universal/heer_gen_stuff_gold_col"
+
+	$envmap "models\delos\shared\envmaps\australium.hdr"
+	$envmaptint "[0.60 0.48 0.36]"
+
+	$phong 1
+	$phongfresnelranges "[1 0.5 2]"
+	$phongwarptexture "models\delos\shared\envmaps\gold_lightwarp"
+	$phongtint "[0.88 0.75 0.15]"
+	$phongexponent 4
+	$phongboost 3.88
+
+	$model 1
+
+	"$detail" "valhalla_censor/p/9af0c1a26dc9"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 32 32 rotate 0 translate -8.125 -10.5625"
+}

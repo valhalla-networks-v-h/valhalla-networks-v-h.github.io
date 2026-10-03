@@ -1,0 +1,20 @@
+VertexLitGeneric
+{
+	$basetexture "models/comradebear/pm0_v3/codww2/rad_stuff/blackbelt"
+	$bumpmap "models/comradebear/pm0_v3/enemyfront/heer_officer_body_army_ddn"
+
+	$envmap "env_cubemap"
+	$normalmapalphaenvmapmask 1
+	$envmaptint "[0.15 0.15 0.15]"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 10
+	$phongboost 2.16
+
+	"$detail" "valhalla_censor/p/9890f09bd1c3"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 32 32 rotate 0 translate -25.28125 -27.6875"
+}

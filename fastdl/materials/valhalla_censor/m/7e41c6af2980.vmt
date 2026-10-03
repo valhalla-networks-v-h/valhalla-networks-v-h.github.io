@@ -1,0 +1,11 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/matti/pm0_v3/codww2/orpo_stuff/headgear/orpo_cap_insignia_col"
+	$bumpmap "models/matti/pm0_v3/codww2/orpo_stuff/headgear/orpo_cap_insignia_nml"
+
+	"$detail" "valhalla_censor/p/f259288e7b23"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 4 rotate 0 translate -0 -2.0546875"
+}

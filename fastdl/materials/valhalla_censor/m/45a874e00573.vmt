@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/promawardsandmedals/matti/badges/badges"
+	$bumpmap "models/promawardsandmedals/matti/badges/badges_nml"
+
+	$phong 1
+	$phongfresnelranges "[0.5 0.75 1]"
+	$phongexponent 25
+	$phongboost 0.1
+
+	"$detail" "valhalla_censor/p/0b3d0af998d0"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "1"
+	"$detailscale" "1"
+	"$detailtexturetransform" "center 0 0 scale 1 1 rotate 0 translate -0 -0"
+}
+
