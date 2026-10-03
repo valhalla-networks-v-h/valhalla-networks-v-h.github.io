@@ -6,20 +6,20 @@ window.VALHALLA_STORE = {
   currency: "USD",
   catalogue: [
     {category: "Ranks", packages: [
-      {name: "VIP Member (Permanent)", price: "39.00", featured: true, perks: [
+      {name: "VIP Member (Permanent)", price: "30.00", featured: true, perks: [
         "+10,000 RM on the character you play",
         "4 character slots instead of 2",
         "Luftwaffe and Kriegsmarine factions unlocked",
         "Physgun, toolgun and props (PET) right away",
         "VIP tools: Advanced Duplicator, bodygroups, lights, lamps",
-        "Premium cars at the car dealer, +25 % pay",
+        "+25 % pay; vehicle flags are not included",
         "VIP tag in chat, reserved slot when the server is full",
         "VIP role on our Discord, may apply for Trusted"],
         note: "PET can be taken away for abuse (prop climbing, spam, blocking, killing)."},
       {name: "[BUNDLE] VIP & Vehicle Flags", price: "39.00", perks: [
         "Everything in VIP Member",
         "Permanent vehicle flags",
-        "Separately 59.00"]}
+        "Separately 50.00"]}
     ]},
     {category: "Flags", packages: [
       {name: "PET Flags", price: "10.00", perks: ["Physgun, toolgun and props", "Permanent, on every character"],
