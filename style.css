@@ -131,7 +131,12 @@ footer { text-align: center; color: var(--faint); font-size: 13px; padding: 26px
 .guide ol li::marker { color: var(--accent-hi); font-weight: 700; }
 .guide .tablewrap { overflow-x: auto; margin: 4px 0 12px; }
 .guide table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.guide th { text-align: left; color: #fff; font-weight: 700; padding: 7px 10px; background: var(--accent-dk); white-space: nowrap; }
+.guide th { text-align: left; color: #fff; font-weight: 700; padding: 7px 10px; background: var(--accent-dk); }
 .guide td { padding: 7px 10px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; }
 .guide tbody tr:nth-child(even) td { background: var(--row); }
 .guide td:first-child { color: var(--text); font-weight: 600; }
+.guide h3 { font-size: 16px; font-weight: 700; color: #fff; margin: 18px 0 8px; }
+.guide h3:first-child { margin-top: 0; }
+
+/* Grid columns may shrink below their content: wide tables scroll inside their box instead of widening the page. */
+main, aside { min-width: 0; }
