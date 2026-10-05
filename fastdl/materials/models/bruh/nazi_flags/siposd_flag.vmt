@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/bruh/nazi_flags/siposd_flag"
+	"$surfaceprop" "Metal"
+	"$surfaceprop2" "Metal"
+}
