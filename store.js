@@ -14,6 +14,16 @@
   // Shown while no Tebex token is configured; mirrors the packages created in the Tebex panel (store-config.js).
   var FALLBACK = cfg.catalogue || [];
 
+  function available(pkg) {
+    return !pkg || (cfg.unavailablePackageIds || []).map(String).indexOf(String(pkg.id)) === -1;
+  }
+
+  function checkAvailable(pkg) {
+    if (available(pkg)) return true;
+    notice.textContent = "This package is no longer available. Please choose an available package from the store.";
+    return false;
+  }
+
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
 
   function heading(text, note) {
@@ -58,6 +68,7 @@
   }
 
   function configure(pkg) {
+    if (!checkAvailable(pkg)) return;
     notice.textContent = "Loading package options...";
     api("GET", "/accounts/" + cfg.token + "/packages/" + pkg.id)
       .then(function (res) {
@@ -95,6 +106,7 @@
   }
 
   function buy(pkg, variableData) {
+    if (!checkAvailable(pkg)) return;
     notice.textContent = "Preparing your basket...";
     api("POST", "/accounts/" + cfg.token + "/baskets", {complete_url: here + "?done=1", cancel_url: here, complete_auto_redirect: true})
       .then(function (res) {
@@ -116,6 +128,11 @@
     var saved = {};
     try { saved = JSON.parse(localStorage.getItem("vBasket") || "{}"); } catch (e) {}
     if (saved.ident !== ident) return;
+    if (saved.pkg && !checkAvailable({id: saved.pkg})) {
+      localStorage.removeItem("vBasket");
+      history.replaceState(null, "", here);
+      return;
+    }
     notice.textContent = "Checking Steam sign-in...";
     api("GET", "/accounts/" + cfg.token + "/baskets/" + encodeURIComponent(ident))
       .then(function (res) {
@@ -132,7 +149,7 @@
   }
 
   var params = new URLSearchParams(location.search);
-  if (params.get("done")) notice.textContent = "Check your Tebex receipt for payment confirmation. Delivered perks appear in /perks; custom packages are handled by staff.";
+  if (params.get("done")) notice.textContent = "Check your Tebex receipt for payment confirmation. Delivered perks appear in /perks. Staff-delivered items follow the delivery instructions in their package description.";
 
   if (!cfg.token) {
     login.disabled = true;
@@ -148,10 +165,11 @@
   api("GET", "/accounts/" + cfg.token + "/categories?includePackages=1")
     .then(function (res) {
       (res.data || []).sort(function(a,b){return (b.name === "Specials") - (a.name === "Specials");}).forEach(function (cat) {
-        if (!(cat.packages || []).length) return;
+        var packages = (cat.packages || []).filter(available);
+        if (!packages.length) return;
         heading(cat.name);
-        (cat.packages || []).sort(function(a,b){return (b.name === "Founder Medal") - (a.name === "Founder Medal");}).forEach(function (p) {
-          grid.appendChild(card({id: p.id, name: p.name, price: Number(p.total_price ?? p.base_price).toFixed(2), from: p.name === "Custom Character", description: p.description}, configure));
+        packages.sort(function(a,b){return (b.name === "Founder Medal") - (a.name === "Founder Medal");}).forEach(function (p) {
+          grid.appendChild(card({id: p.id, name: p.name, price: Number(p.total_price ?? p.base_price).toFixed(2), description: p.description}, configure));
         });
       });
     })

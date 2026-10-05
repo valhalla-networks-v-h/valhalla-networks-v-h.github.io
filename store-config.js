@@ -4,6 +4,8 @@
 window.VALHALLA_STORE = {
   token: "14t67-f2a154c49c23027e70f1aaeeb580101ca80100ef",
   currency: "USD",
+  // Paused after the Tebex review: future commissions need individually specified packages.
+  unavailablePackageIds: [7711510, 7711610, 7711511, 7711512],
   catalogue: [
     {category: "Ranks", packages: [
       {name: "VIP Member (Permanent)", price: "30.00", featured: true, perks: [
@@ -65,13 +67,7 @@ window.VALHALLA_STORE = {
     ]},
     {category: "Characters", packages: [
       {name: "Luftwaffe Whitelist", price: "8.00", perks: ["Create Luftwaffe characters"]},
-      {name: "Kriegsmarine Whitelist", price: "8.00", perks: ["Create Kriegsmarine characters"]},
-      {name: "Custom Character", price: "5.00", from: true, perks: [
-        "A character with the rank you choose in the faction you choose, set up by our staff",
-        "Price by rank (the same rank costs the same in every faction): Schütze 5, Gefreiter 10, Obergefreiter 15, "
-          + "Unteroffizier 30, Unterfeldwebel 35, Feldwebel 40, Oberfeldwebel 45, Leutnant 55, Oberleutnant 60, "
-          + "Hauptmann 65, Major 80, Oberstleutnant 100, Oberst 120, Oberführer 180, Generalmajor 250"],
-        note: "Lost by permakill or demotion; you may create a new character with the same rank right away. Rule breaks can remove the rank for good."}
+      {name: "Kriegsmarine Whitelist", price: "8.00", perks: ["Create Kriegsmarine characters"]}
     ]},
     {category: "Other", packages: [
       {name: "+1 Character Slot", price: "5.00", perks: ["One more character slot per purchase", "Requires VIP"]},
@@ -79,9 +75,7 @@ window.VALHALLA_STORE = {
       {name: "Locked Storage (20 Slots)", price: "10.00", perks: ["Lockable container with 20 slots", "Placed by our staff, you choose the password"]}
     ]},
     {category: "Specials", packages: [
-      {name: "Founder Medal", price: "49.00", perks: ["Founder's Badge on every character", "Shown in the medal case and above your name"]},
-      {name: "Custom Playermodel", price: "100.00", from: true, perks: ["Your own playermodel, made or chosen with our staff"]},
-      {name: "Custom Medal", price: "100.00", from: true, perks: ["Your own medal, designed with our staff"]}
+      {name: "Founder Medal", price: "49.00", perks: ["Founder's Badge on every character", "Shown in the medal case and above your name"]}
     ]}
   ]
 };
