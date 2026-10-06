@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/valhalla/accessories/umhang_black"
+	"$bumpmap" "models/valhalla/accessories/umhang_normal"
+	"$phong" "1"
+	"$phongexponent" "14"
+	"$phongboost" "0.35"
+	"$phongfresnelranges" "[0.3 0.6 1]"
+	"$surfaceprop" "cloth"
+}
