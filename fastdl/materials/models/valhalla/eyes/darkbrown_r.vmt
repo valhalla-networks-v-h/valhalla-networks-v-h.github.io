@@ -1,0 +1,16 @@
+"EyeRefract"
+{
+	"$Iris"               "models/comradebear/pm0_v3/heads/eyes/eye-iris-darkbrown"
+	"$AmbientOcclTexture" "models/comradebear/pm0_v3/heads/eyes/engine/eyeball_r_ambient"
+	"$Envmap"             "models/comradebear/pm0_v3/heads/eyes/engine/eye-reflection-cubemap-"
+	"$CorneaTexture"      "models/comradebear/pm0_v3/heads/eyes/engine/eye-cornea"
+	"$EyeballRadius" "0.5"
+	"$AmbientOcclColor" "[0.36 0.25 0.2]"
+	"$Dilation" "0.5"
+	"$ParallaxStrength" "0.25"
+	"$CorneaBumpStrength" "1.25"
+	"$halflambert" "1"
+	"$nodecal" "1"
+	"$RaytraceSphere" "1"
+	"$SphereTexkillCombo" "0"
+}
