@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/valhalla/hair/tolle"
+	"$bumpmap" "models/valhalla/hair/tolle_n"
+	"$alphatest" "1"
+	"$alphatestreference" "0.5"
+	"$allowalphatocoverage" "1"
+	"$nocull" "1"
+}
