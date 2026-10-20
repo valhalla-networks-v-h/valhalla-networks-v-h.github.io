@@ -1,6 +1,6 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "models/valhalla/hair/faces/male_06"
+	"$basetexture" "models/valhalla/hair/faces/v2/male_02"
 	"$bumpmap" "models/valhalla/hair/faces/skin_n"
 	"$phong" "1"
 	"$phongexponent" "10"
